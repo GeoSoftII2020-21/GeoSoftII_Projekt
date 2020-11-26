@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, json
+
 
 app = Flask(__name__)
 
@@ -9,10 +10,10 @@ def default():
     Soll ein JSON mit der Kurzübersicht unserer API Returnen
     :return: JSON
     """
-    #Docstring
-
-    # API Übersicht
-    data = None
+    # Entnommen aus der OpenEO API
+    #Todo: Anpassen
+    #API Übersicht
+    data = { "api_version": "1.0.0", "backend_version": "1.1.2", "stac_version": "string", "id": "cool-eo-cloud", "title": "WWU Geosoft2 Projekt", "description": "WWU Projekt", "production": False, "endpoints": [ { "path": "/collections", "methods": [ "GET" ] }, { "path": "/processes", "methods": [ "GET" ] }, { "path": "/jobs", "methods": [ "GET", "POST" ] }, { "path": "/jobs/{job_id}", "methods": [ "DELETE", "PATCH" ] }, { "path": "/jobs/{job_id}/result", "methods": [ "GET", "POST" ] } ], "links": [ { "href": "https://www.uni-muenster.de/de/", "rel": "about", "type": "text/html", "title": "Homepage of the service provider" } ] }
     return jsonify(data)
 
 #Gibt die Collections aus bei Get Request
@@ -33,7 +34,7 @@ def collections():
 def processes():
     """
     Return die Processes
-    :return:
+    :return: Processes
     """
     #Processes müssten Abgefragt werden
     data = None
@@ -119,5 +120,4 @@ def postData():
 
 # Startet den Job
 if __name__ == "__main__":
-    help(jobsGET)
     app.run(debug=True, host="0.0.0.0", port=80)
