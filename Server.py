@@ -27,14 +27,10 @@ def collections():
     :returns:
         jsonify(data): Alle Collections in einer JSON
     """
-    # Docstring
-
-    # Collections müssten Abgefragt werden
     data = None
     return jsonify(data)
 
 
-# Gibt die Processes aus bei Get Request
 @app.route("/processes", methods=['GET'])
 def processes():
     """
@@ -42,12 +38,9 @@ def processes():
     :returns:
         jsonify(data): Alle processes in einer JSON
     """
-    # Processes müssten Abgefragt werden
     data = None
     return jsonify(data)
 
-
-# Get Reuqest für Jobs
 @app.route("/jobs", methods=['GET'])
 def jobsGET():
     """
