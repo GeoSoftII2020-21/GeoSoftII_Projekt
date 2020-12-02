@@ -8,6 +8,7 @@ import netCDF4 as nc4
 import cartopy.crs as ccrs #Kann nur mit conda installiert werden
 from ftplib import FTP 
 from datetime import datetime
+import os
 
 
 def download_file (year, timeframe):
