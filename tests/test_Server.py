@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import json
 import pytest
 #IMPORT MUSS EVTL ANGEPASST WERDEN
-from  import configure_routes
+from  GeoSoftII_Projekt.Server import configure_routes
 
 
 @pytest.fixture(scope="module")
