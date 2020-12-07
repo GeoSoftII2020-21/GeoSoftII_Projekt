@@ -8,10 +8,11 @@ from  GeoSoftII_Projekt.Server import configure_routes
 @pytest.fixture(scope="module")
 def app():
  app = Flask(__name__)
+ configure_routes(app)
  return app
 
 def test_default_route_success(app):
-        configure_routes(app)
+        
         app.testing=True
         client = app.test_client()
         url = '/'
@@ -41,7 +42,7 @@ def test_default_route_success(app):
 
 
 def test_unvalid_route_failure(app):
-        configure_routes(app)
+        
         client = app.test_client()
         url = '/url_die_nicht_existiert'
 
@@ -60,7 +61,7 @@ def test_unvalid_route_failure(app):
 
 def test_collections_success(app):
 
-        configure_routes(app)
+        
         client = app.test_client()
         url = '/collections'
 
@@ -95,7 +96,7 @@ def test_collections_success(app):
 
 
 def test_collections_failure(app):
-    configure_routes(app)
+    
     client = app.test_client()
     url = '/collections'
 
@@ -128,7 +129,7 @@ def test_collections_failure(app):
 
 def test_processes_success(app):
 
-         configure_routes(app)
+         
          client = app.test_client()
          url = '/processes'
 
@@ -150,7 +151,7 @@ def test_processes_success(app):
 
 
 def test_processes_failure(app):
-    configure_routes(app)
+    
     client = app.test_client()
     url = '/processes'
 
@@ -168,7 +169,7 @@ def test_processes_failure(app):
 
 def test_jobsGET_success(app):
 
-       configure_routes(app)
+       
        client = app.test_client()
        url = '/jobs'
 
@@ -188,7 +189,7 @@ def test_jobsGET_success(app):
 
 
 def test_jobsGET_failure(app):
-    configure_routes(app)
+    
     client = app.test_client()
     url = '/jobs'
 
@@ -208,7 +209,7 @@ def test_jobsGET_failure(app):
 
 def test_jobsPOST_success(app):
      # Todo: NOT CORRECTLY IMPLEMENTED YET
-     configure_routes(app)
+     
      client = app.test_client()
      url = '/jobs'
      '''
@@ -227,7 +228,7 @@ def test_jobsPOST_success(app):
 
 def test_jobsPOST_failure_bad_request(app):
 
-     configure_routes(app)
+     
      client = app.test_client()
      url = '/jobs'
 
@@ -241,7 +242,7 @@ def test_jobsPOST_failure_bad_request(app):
 
 def test_patchFromID_success(app):
 
-      configure_routes(app)
+      
       client = app.test_client()
       url = '/patch/<int:id>'
 
@@ -268,7 +269,7 @@ def test_startFromID_failure(app):
     pass
 '''
 def test_getJobFromId_success(app):
-    configure_routes(app)
+    
     client = app.test_client()
     url = '/jobs/<int:id>/results'
 
@@ -285,7 +286,7 @@ def test_getJobFromId_success(app):
 
 
 def test_getJobFromId_failure(app):
-    configure_routes(app)
+    
     client = app.test_client()
     url = '/jobs/<int:id>/results'
 
