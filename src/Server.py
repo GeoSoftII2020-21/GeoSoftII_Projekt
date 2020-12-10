@@ -18,6 +18,21 @@ def default():
              "title": "Homepage of the service provider"}]}
     return jsonify(data)
 
+@app.route("/.well-known/openeo", methods=["GET"])
+def wellKnownEO():
+    """
+    Implementiert abfrage für Supported openEO Versions auf wunsch von Judith.
+    Evtl. Antwort noch anpassen. Ich bin mir noch nicht ganz sicher ob das so richtig ist. Insbesondere weiß ich nicht welche version wir implementieren.
+
+    :returns:
+        jsonify(data): JSON mit der Unterstützen API Version und ein verweis auf diese.
+    """
+    data = {"versions": [
+        {"url": "localhost",
+         "production": "false",
+         "api_version": "1.0.0"}
+    ]}
+    return jsonify(data)
 
 @app.route("/collections", methods=['GET'])
 def collections():
