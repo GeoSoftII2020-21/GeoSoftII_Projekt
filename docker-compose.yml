@@ -1,41 +1,44 @@
 version: "3.9"
 services:
   frontend:
-    image: felixgi1516/geosoft2_frontend
+    image: felixgi1516/geosoft2_frontend:latest
     depends_on:
       - processManager
       - database
-      - ndvi
-      - sst
+      - ndvi_0
+      - sst_0
     ports:
       - 80:80
     environment:
       - DOCKER=True
   processManager:
-    image: felixgi1516/geosoft2_jobmanagement
+    image: felixgi1516/geosoft2_jobmanagement:latest
     environment:
       - DOCKER=True
+      - ndvi=ndvi_0
+      - mean_sst=sst_0
+      - load_collection=database
     depends_on:
       - database
-      - ndvi
-      - sst
+      - ndvi_0
+      - sst_0
     ports:
-      - 442
+      - 80
   database:
-    image: felixgi1516/geosoft2_dataserver
+    image: felixgi1516/geosoft2_dataserver:latest
     environment:
       - DOCKER=True
     ports:
-      - 443
-  ndvi:
-    image: felixgi1516/geosoft2_ndvi_process
+      - 80
+  ndvi_0:
+    image: felixgi1516/geosoft2_ndvi_process:latest
     environment:
       - DOCKER=True
     ports:
-      - 445
-  sst:
-    image: felixgi1516/geosoft2_sst_process
+      - 80
+  sst_0:
+    image: felixgi1516/geosoft2_sst_process:latest
     environment:
       - DOCKER=True
     ports:
-      - 444
+      - 80
