@@ -9,3 +9,4 @@
 
 1. [Ausführlicheres How To README](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 2. [Github Markdown Dokumentation](https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
+3. [Alle Github Emojis :astonished: ](https://gist.github.com/rxaviers/7360908)
