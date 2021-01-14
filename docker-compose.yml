@@ -11,6 +11,8 @@ services:
       - 80:80
     environment:
       - DOCKER=True
+    volumes:
+      - data-volume:/data
   processManager:
     image: felixgi1516/geosoft2_jobmanagement:latest
     environment:
@@ -24,21 +26,31 @@ services:
       - sst_0
     ports:
       - 80
+    volumes:
+      - data-volume:/data
   database:
     image: felixgi1516/geosoft2_dataserver:latest
     environment:
       - DOCKER=True
     ports:
       - 80
+    volumes:
+      - data-volume:/data
   ndvi_0:
     image: felixgi1516/geosoft2_ndvi_process:latest
     environment:
       - DOCKER=True
     ports:
       - 80
+    volumes:
+      - data-volume:/data
   sst_0:
     image: felixgi1516/geosoft2_sst_process:latest
     environment:
       - DOCKER=True
     ports:
       - 80
+    volumes:
+      - data-volume:/data
+volumes:
+  data-volume:
