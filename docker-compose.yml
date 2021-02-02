@@ -32,11 +32,14 @@ services:
     image: felixgi1516/geosoft2_dataserver:latest
     environment:
       - DOCKER=True
+      - Username=bugmenot
+      - Password=bugmenot
     ports:
       - 80
     volumes:
       - data-volume:/data
-      - data-intern:/dataintern
+      - SST:/SST
+      - SENTINEL:/SENTINEL
   ndvi_0:
     image: felixgi1516/geosoft2_ndvi_process:latest
     environment:
@@ -55,4 +58,5 @@ services:
       - data-volume:/data
 volumes:
   data-volume:
-  data-intern:
+  SST:
+  SENTINEL:

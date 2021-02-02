@@ -11,7 +11,7 @@ print("Startup")
 print("Downloade und Erstelle Dockerfile")
 x = requests.get("https://raw.githubusercontent.com/GeoSoftII2020-21/GeoSoftII_Projekt/Docker-compose/docker-compose.yml") #Downloade docker Compose File
 time.sleep(5)
-with open("docker-compose.yml","w+") as text_file:
+with open("Docker/docker-compose.yml", "w+") as text_file:
     text_file.write(x.text) #Schreibe docker Compose File auf festplatte
 time.sleep(5)
 print("Starte Docker...")
