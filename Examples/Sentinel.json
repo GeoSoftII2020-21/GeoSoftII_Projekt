@@ -6,7 +6,7 @@
       "loadcollection1": {
         "process_id": "load_collection",
         "arguments": {
-          "timeframe" : ["01-02-2020 00:00:00","01-05-2020 00:00:00","%d-%m-%Y %H:%M:%S"],
+          "timeframe" : ["02-06-2020 00:00:00","20-06-2020 00:00:00","%d-%m-%Y %H:%M:%S"],
           "DataType": "Sentinel2",
           "cloudcoverage":[0,30],
           "Login":["bugmenot","bugmenot"]
