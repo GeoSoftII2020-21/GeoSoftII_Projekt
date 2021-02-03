@@ -35,17 +35,21 @@ services:
       - Username=bugmenot
       - Password=bugmenot
       - load_sst=False
-      - load_sentinel=True
+      - load_sentinel=False
       - SST_Start=2012
       - SST_End=2015
       - Sentinel_Start=2020-06-01T00:00:00Z
       - Sentinel_End=2020-07-01T00:00:00Z
+      - FTP_User=dummy
+      - FTP_Password=dummy
     ports:
       - 80
+      - 21:21
     volumes:
       - data-volume:/data
       - SST:/SST
       - SENTINEL:/SENTINEL
+      - SHARED:/shareddrive
   ndvi_0:
     image: felixgi1516/geosoft2_ndvi_process:latest
     environment:
@@ -66,3 +70,4 @@ volumes:
   data-volume:
   SST:
   SENTINEL:
+  SHARED:
