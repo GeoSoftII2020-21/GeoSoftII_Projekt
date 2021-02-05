@@ -17,7 +17,8 @@
         "arguments": {
           "data":{
               "from_node": "loadcollection1"
-          }
+          },
+          "bb": [-999,-999,-999,-999]
         }
         },
         "save":{
