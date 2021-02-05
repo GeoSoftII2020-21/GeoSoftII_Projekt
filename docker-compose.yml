@@ -8,7 +8,7 @@ services:
       - ndvi_0
       - sst_0
     ports:
-      - 8080:8080
+      - 80:80
     environment:
       - DOCKER=True
     volumes:
