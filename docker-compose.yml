@@ -34,14 +34,13 @@ services:
       - DOCKER=True
       - Username=bugmenot
       - Password=bugmenot
-      - load_sst=False
+      - load_sst=True
       - load_sentinel=False
       - SST_Start=2012
       - SST_End=2015
       - Sentinel_Start=2020-06-01T00:00:00Z
       - Sentinel_End=2020-07-01T00:00:00Z
-      - FTP_User=dummy
-      - FTP_Password=dummy
+      - process_name=processManager
     ports:
       - 80
       - 21:21
