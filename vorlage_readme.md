@@ -13,10 +13,10 @@
 <a name="overview"><h3>Overview</h3></a>
 
 \
-<a name="install"><h3>installation</h3></a>
+<a name="install"><h3>Installation</h3></a>
 
 \
-<a name="functionalities"><h3></h3></a>
+<a name="functionalities"><h3>Scope of functionalities</h3></a>
 
 #### Central Functionality
 
