@@ -1,16 +1,21 @@
 version: "3.9"
 services:
   frontend:
+    #Image name
     image: felixgi1516/geosoft2_frontend:latest
+    #Dependencies
     depends_on:
       - processManager
       - database
       - ndvi_0
       - sst_0
+    #Ports
     ports:
       - 80:80
+    #Environment Variable, (Outdated) do not change
     environment:
       - DOCKER=True
+    #Global Volumes
     volumes:
       - data-volume:/data
   processManager:
