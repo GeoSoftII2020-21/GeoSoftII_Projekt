@@ -1,33 +1,33 @@
-# Name des Teilprojektes
-### Geosoftware II Projekt WiSe 2020/21
+# Name of the subproject
+### Geosoftware II Project WiSe 2020/21
 ---
 
-## Inhaltsverzeichnis
-[1. Übersicht](#overview) \
+## Table of Contents
+[1. Overview](#overview) \
 [2. Installation](#install) \
-[3. Anwendung](#use) \
-  3.1. Zentrale Funktionalität \
-  3.2. API Endpunkte \
-[4. Anhang](#annex)
+[3. Use](#use) \
+  3.1. Central functionality \
+  3.2. API endpoints \
+[4. appendix](#annex)
 
 \
-<a name="overview"><h3>Übersicht</h3></a>
+<a name="overview"><h3>Overview</h3></a>
 
 \
-<a name="install"><h3>Installation</h3></a>
+<a name="install"><h3>installation</h3></a>
 
 \
-<a name="use"><h3>Anwendung</h3></a>
+<a name="use"><h3>Application</h3></a>
 
-#### Zentrale Funktionalität
+#### Central Functionality
 
-#### API Endpunkte
+#### API endpoints
 
 \
-<a name="annex"><h3>Anhang</h3></a>
+<a name="annex"><h3>annex</h3></a>
 
-#### Verwendete Software
+#### Software used
 
 Software | Version
 ------ | ------
-[Software]()   | Version
+[Software]() | Version
