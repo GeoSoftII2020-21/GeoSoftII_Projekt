@@ -2,13 +2,12 @@
 ### Geosoftware II Project WiSe 2020/21
 ---
 
-## Table of Contents
+## Table of contents
 [1. Overview](#overview) \
 [2. Installation](#install) \
-[3. Use](#use) \
-  3.1. Central functionality \
-  3.2. API endpoints \
-[4. appendix](#annex)
+[3. Scope of functionalities](#functionalities)  \
+[4. Examples of use](#use) \
+[5. Appendix](#annex) \
 
 \
 <a name="overview"><h3>Overview</h3></a>
@@ -17,16 +16,16 @@
 <a name="install"><h3>installation</h3></a>
 
 \
-<a name="use"><h3>Application</h3></a>
+<a name="functionalities"><h3></h3></a>
 
 #### Central Functionality
 
 #### API endpoints
 
 \
-<a name="annex"><h3>annex</h3></a>
+<a name="annex"><h3>Appendix</h3></a>
 
-#### Software used
+#### Technologies
 
 Software | Version
 ------ | ------
