@@ -42,7 +42,7 @@ services:
       - load_sst=True
       - load_sentinel=False
       - SST_Start=2012
-      - SST_End=2015
+      - SST_End=2014
       - Sentinel_Start=2020-06-01T00:00:00Z
       - Sentinel_End=2020-07-01T00:00:00Z
       - process_name=processManager
