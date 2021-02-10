@@ -1,0 +1,77 @@
+version: "3.9"
+services:
+  frontend:
+    #Image name
+    image: felixgi1516/geosoft2_frontend:latest
+    #Dependencies
+    depends_on:
+      - processManager
+      - database
+      - ndvi_0
+      - sst_0
+    #Ports
+    ports:
+      - 80:80
+    #Environment Variable, (Outdated) do not change
+    environment:
+      - DOCKER=True
+    #Global Volumes
+    volumes:
+      - data-volume:/data
+  processManager:
+    image: felixgi1516/geosoft2_jobmanagement:latest
+    environment:
+      - DOCKER=True
+      - ndvi=ndvi_0
+      - mean_sst=sst_0
+      - load_collection=database
+    depends_on:
+      - database
+      - ndvi_0
+      - sst_0
+    ports:
+      - 80
+    volumes:
+      - data-volume:/data
+  database:
+    image: felixgi1516/geosoft2_dataserver:latest
+    environment:
+      - DOCKER=True
+      - Username=bugmenot
+      - Password=bugmenot
+      - load_sst=True
+      - load_sentinel=False
+      - SST_Start=2012
+      - SST_End=2014
+      - Sentinel_Start=2020-06-01T00:00:00Z
+      - Sentinel_End=2020-07-01T00:00:00Z
+      - process_name=processManager
+    ports:
+      - 80
+      - 21:21
+    volumes:
+      - data-volume:/data
+      - SST:/SST
+      - SENTINEL:/SENTINEL
+      - SHARED:/shareddrive
+  ndvi_0:
+    image: felixgi1516/geosoft2_ndvi_process:latest
+    environment:
+      - DOCKER=True
+    ports:
+      - 80
+    volumes:
+      - data-volume:/data
+  sst_0:
+    image: felixgi1516/geosoft2_sst_process:latest
+    environment:
+      - DOCKER=True
+    ports:
+      - 80
+    volumes:
+      - data-volume:/data
+volumes:
+  data-volume:
+  SST:
+  SENTINEL:
+  SHARED:

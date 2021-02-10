@@ -1,0 +1,35 @@
+{
+  "title": "Example Title",
+  "description": "Example Description",
+  "process": {
+    "process_graph": {
+      "loadcollection1": {
+        "process_id": "load_collection",
+        "arguments": {
+          "timeframe" : ["02-06-2020 00:00:00","20-06-2020 00:00:00","%d-%m-%Y %H:%M:%S"],
+          "DataType": "Sentinel2",
+          "cloudcoverage":[0,30],
+          "Login":["bugmenot","bugmenot"]
+        }
+        },
+        "ndvi": {
+        "process_id": "ndvi",
+        "arguments": {
+          "data":{
+              "from_node": "loadcollection1"
+          },
+          "bb": [-999,-999,-999,-999]
+        }
+        },
+        "save":{
+            "process_id": "save_result",
+            "arguments":{
+                "SaveData":{
+                    "from_node":"ndvi"
+                },
+                "Format": "netcdf"
+            }
+        }
+      }
+      }
+    }
