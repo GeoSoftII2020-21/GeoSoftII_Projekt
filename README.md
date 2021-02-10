@@ -5,7 +5,7 @@
 ## Table of contents
 [1. Overview](#overview) \
 [2. Installation](#install) \
-[3. Scope of functionalities](#functionalities)  \
+[3. Scope of functionalities](#functionalities)
 
 
 \
