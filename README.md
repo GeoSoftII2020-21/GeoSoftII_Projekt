@@ -11,13 +11,13 @@
 \
 <a name="overview"><h3>Overview</h3></a>
 The goal of this project is to implement a backend that can process Copernicus Sentinel and SST data using pangeo-packages (primarily xarray and dask).
-All Code of the used Microservices can be found here: [GeoSoftII2020-21 Github](https://github.com/GeoSoftII2020-21)
+All code of the used microservices can be found here: [GeoSoftII2020-21 Github](https://github.com/GeoSoftII2020-21)
 
 
 \
 <a name="install"><h3>Installation</h3></a>
 1. Download [docker-compose.yml](https://github.com/GeoSoftII2020-21/GeoSoftII_Projekt/blob/main/docker-compose.yml)
-2. Configure your composefile by editing the  `database` item:  
+2. Configure your compose file by editing the  `database` item:  
 	- Enter your username and password for accessing Copernicus Open Acess Hub to download Sentinel2 data 
 	- select datasets and their time periods to download
 	-  further information can be seen in the  [GeoSoftII_DataServer](https://github.com/GeoSoftII2020-21/GeoSoftII_DataServer#functionalities) GitHub repository
@@ -28,11 +28,11 @@ All Code of the used Microservices can be found here: [GeoSoftII2020-21 Github](
 4. Get an [example.JSON](https://github.com/GeoSoftII2020-21/GeoSoftII_Projekt/tree/main/Examples) and configure it to your desired output:
 	- `"loadcollection1"` with time period and datatype (SST or Sentinel2)
 	- `"process_id"` with time period and boundingbox
-	- `"process_id":"safe_result"` with time period and boundingbox
+	- `"process_id":"save_result"` with time period and boundingbox
 5. create a batchjob using the Python scripts for SST or Sentinel found in the [example folder](https://github.com/GeoSoftII2020-21/GeoSoftII_Projekt/tree/main/Examples).
-6. Do an api-get-Request   `POST /jobs/` to create a new batch job with the posted JSON.
-7. Do an api-post-request   `POST /jobs/{job_id}/results` to start your specified Job.
-8. Do an api-get-Request `GET /jobs/{job_id}/results` to get a download link for the specified job.
+6. Send an api-get-Request   `POST /jobs/` to create a new batch job with the JSON.
+7. Send an api-post-request   `POST /jobs/{job_id}/results` to start your specified job.
+8. Send an api-get-Request `GET /jobs/{job_id}/results` to get a download link for the specified job.
 9. Download the result of your processed data.
 
 \
